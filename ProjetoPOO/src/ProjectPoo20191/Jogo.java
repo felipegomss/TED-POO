@@ -1,17 +1,22 @@
 package ProjectPoo20191;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 public class Jogo {
 	static Protagonista protagonista = new Protagonista();
 
+	static List<Inimigos> inimigos = new ArrayList<>();
+	
 	static String erro = "Opção indisponível";
 
 	private static void abertura() {
 		JOptionPane.showMessageDialog(null, "( •_•)\n" + "  ( ง )ง            VEM TRANQUILO!\n" + "  |︶|",
 				"Clique em 'Ok' para prosseguir", JOptionPane.PLAIN_MESSAGE);
 		JOptionPane.showMessageDialog(null,
-				"Esse é um jogo de RPG onde suas escolhas" + "\ne sua sorte influenciará no seu destino!",
+				"Esse é um jogo de RPG onde suas escolhas" + "\ne sua sorte influenciará no seu destino!" +"\nNão afobe não",
 				"Clique em 'Ok' para prosseguir", JOptionPane.PLAIN_MESSAGE);
 		JOptionPane.showMessageDialog(null, "A cada fase uma caixa de diálogo aparecerá para você escolher uma opção,"
 				+ "\nfaça a escolha correta e poderá continuar no jogo," + "\ncaso contrário, seu destino é a morte!",
@@ -35,6 +40,7 @@ public class Jogo {
 	public static void main(String[] args) {
 		abertura();
 		faseUm();
+		faseDois();
 
 	}
 
@@ -50,7 +56,7 @@ public class Jogo {
 		case 2:
 			JOptionPane.showMessageDialog(null, "Você se mudou para o Tibete para levar a vida como um monge",
 					"Tashi Delek བཀྲ་ཤིས་བདེ་ལེགས", JOptionPane.CLOSED_OPTION);
-			int option2 = new Integer(JOptionPane.showInputDialog(null, "1. Refazer a escolha \n2.Sair",
+			int option2 = new Integer(JOptionPane.showInputDialog(null, "1. Tentar novamente? \n2.Sair",
 					"Faça sua escolha!", JOptionPane.PLAIN_MESSAGE)).intValue();
 			switch (option2) {
 			case 1:
@@ -101,5 +107,28 @@ public class Jogo {
 		}
 	}
 	
+	private static void faseDois(){
+		
+		JOptionPane.showMessageDialog(null, "Você já treinou suficiente, quer ir para uma luta clandestina e ganhar dinheiro ou continuar treinando para aprimorar sua força?"
+				+ "obs: caso continue treinando, você só poderá treinar na academia e gastará 400 moedas na academia, porém aumentará sua força e vida");
+		
+		int option = new Integer (JOptionPane.showInputDialog(null, "1. Ir para uma luta clandestina (taxa de entrada=100golds) \n2. Treinar na academia e aumentar sua força e vida",
+				"Faça sua escolha!", JOptionPane.PLAIN_MESSAGE)).intValue();
+		
+		switch (option) {
+		case 1:
+			JOptionPane.showMessageDialog(null, "Você foi no clube a noite, e tem 2 oponentes para lutar, faça sua escolha entre os 2" + "\nStatus dos oponente são" + "\n" + inimigos.toString());
+			break;
+		case 2:
+			JOptionPane.showMessageDialog(null, "Você incrementou");
+			
+			break;
+		default:
+			JOptionPane.showMessageDialog(null, erro, "ERRO", JOptionPane.ERROR_MESSAGE);
+			faseDois();
+
+		}
+		
+	}
 	
 }

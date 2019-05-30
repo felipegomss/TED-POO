@@ -23,5 +23,13 @@ public abstract class Personagens {
 	}
 	public void setForca(Integer forca) {
 		this.forca = forca;
-	}	
+	}
+	@Override
+	public String toString() {
+		return "nome=" + nome + ", vida=" + vida + ", forca=" + forca;
+	}
+	
+	
+	
+	
 }
