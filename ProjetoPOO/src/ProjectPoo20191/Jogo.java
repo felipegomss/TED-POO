@@ -33,7 +33,7 @@ public class Jogo {
 	}
 
 	public static void main(String[] args) {
-
+		abertura();
 		faseUm();
 
 	}
@@ -83,12 +83,16 @@ public class Jogo {
 		int option = new Integer(
 				JOptionPane.showInputDialog(null, "1. Entrar na academia \n2. Treinar de graça com os manos da rua",
 						"Faça sua escolha!", JOptionPane.PLAIN_MESSAGE)).intValue();
+	
 		switch (option) {
 		case 1:
-			
+			protagonista.setGold(750);
+			protagonista.setForca(10);
+			JOptionPane.showMessageDialog(null, "Seu personagm agora tem " + protagonista.getGold() + " de moedas, e sua força é " + protagonista.getForca());
 			break;
 		case 2:
-
+			protagonista.setForca(5);
+			JOptionPane.showMessageDialog(null, "Seu personagm agora tem " + protagonista.getGold() + " de moedas, e sua força é " + protagonista.getForca());
 			break;
 		default:
 			JOptionPane.showMessageDialog(null, erro, "ERRO", JOptionPane.ERROR_MESSAGE);
@@ -97,7 +101,5 @@ public class Jogo {
 		}
 	}
 	
-	private static void subtracaoDinheiro() {
-		
-	}
+	
 }
