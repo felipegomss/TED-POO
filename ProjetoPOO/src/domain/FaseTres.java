@@ -1,7 +1,5 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
@@ -11,46 +9,62 @@ public class FaseTres {
 
 	static String erro = "Opção indisponível";
 
-	static Protagonista protagonista = new Protagonista();
-
-	static List<Inimigos> inimigos = new ArrayList<>();
-
+	static Protagonista protagonista;
 
 	public static void faseTres() {
+		Inimigos inimigo1 = new Inimigos("Castanheiro", 180, 21);
+		Inimigos inimigo2 = new Inimigos("Cajueiro", 200, 25);
+		Inimigos inimigo3 = new Inimigos("Mangabeiro", 220, 27);
 
 		JOptionPane.showMessageDialog(null,
-				"Você já treinou suficiente, quer avançar para proxima fase ou continuar treinando para aprimorar sua força?"
-						+ "obs: caso continue treinando, você só poderá treinar na academia e gastará 400 moedas na academia, porém aumentará sua força e vida");
+				"Você agora tem a opção de ir para uma Luta clandestina ou Lutar em um torneio para melhorar suas habilidades e receber recompensas"
+						+ "obs:\n Caso escolha luta clandestina, pode escolher seu oponente mas as recompensas serão menores"
+						+ "\nCaso escolha lutar em um torneio, mais de um inimigo será indicado e as chances de perder são maiores, mas terá maiores recompensas");
 
 		int option = new Integer(JOptionPane.showInputDialog(null,
-				"1. Avançar para proxima fase \n2. Treinar na academia e aumentar sua força e vida",
+				"1. Lutar clandestinamente e enfretar um oponente a sua escolha(100Golds para entrar e Recompensa 200Golds) "
+						+ "\n2. Lutar em um torneio e enfretar varios oponentes(500Golds para entrar. Recompensa 1000Golds)",
 				"Faça sua escolha!", JOptionPane.PLAIN_MESSAGE)).intValue();
 
 		switch (option) {
 		case 1:
+			int option2 = new Integer(JOptionPane.showInputDialog(null, "1. Nome: " + inimigo1.getNome() + "\nForça: "
+					+ inimigo1.getForca() + "\nVida:" + inimigo1.getVida() + "\n \n" + 
+					"2. Nome: " + inimigo2.getNome() + "\nForça: " + inimigo2.getForca() + "\nVida:" + inimigo2.getVida() + "\n \n" + 
+					"3. Nome: "	+ inimigo3.getNome() + "\nForça: " + inimigo3.getForca() + "\nVida:" + inimigo3.getVida() + "\n \n",
+					"Escolha seu inimigo", JOptionPane.PLAIN_MESSAGE)).intValue();
+			switch (option2) {
+			case 1:
+				Briga.briga(inimigo1);
+				break;
+			
+			case 2:
+				Briga.briga(inimigo2);
+				break;
+				
+			case 3:
+				Briga.briga(inimigo3);
+				break;
 
+			default:
+				break;
+			}
+			
 			break;
 		case 2:
-			protagonista.setGold(protagonista.getGold() - 400);
-			protagonista.setForca(protagonista.getForca() + 3);
-			protagonista.setVida(protagonista.getVida() + 20);
-			JOptionPane.showMessageDialog(null, "Sua força e vida agora são: \nForça:" + " " + protagonista.getForca()
-					+ "\nVida: " + protagonista.getVida() + "\n E Agora você só tem " + protagonista.getGold() + " Golds");
-
-			Integer probabilidade = rd.nextInt((9) + 1);
-
-			if (probabilidade < 3) {
-
-				JOptionPane.showMessageDialog(null,
-						"Enquanto você treinava, você foi desafiado por um inimigo e teve que aceitar");
-				//TODO criar classe brigou depois
-			}
+			JOptionPane.showMessageDialog(null, "");
+			Briga.briga(inimigo1);
+			JOptionPane.showMessageDialog(null, "");
+			Briga.briga(inimigo2);
+			JOptionPane.showMessageDialog(null, "");
+			Briga.briga(inimigo3);
+			
 			break;
 		default:
 			JOptionPane.showMessageDialog(null, erro, "ERRO", JOptionPane.ERROR_MESSAGE);
 			faseTres();
 		}
-		
+
 	}
 
 }

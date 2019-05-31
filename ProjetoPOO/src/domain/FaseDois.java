@@ -11,7 +11,7 @@ public class FaseDois {
 
 	static String erro = "Opção indisponível";
 
-	static Protagonista protagonista = new Protagonista();
+	static Protagonista protagonista;
 
 	static List<Inimigos> inimigos = new ArrayList<>();
 

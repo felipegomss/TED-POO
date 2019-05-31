@@ -10,7 +10,7 @@ import domain.Protagonista;
 
 public class FaseUm {
 
-	static Protagonista protagonista = new Protagonista();
+	static Protagonista protagonista;
 
 	static List<Inimigos> inimigos = new ArrayList<>();
 
@@ -80,5 +80,5 @@ public class FaseUm {
 
 		}
 	}
-
+	
 }
