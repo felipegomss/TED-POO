@@ -1,4 +1,4 @@
-package ProjectPoo20191;
+package domain;
 
 public abstract class Personagens {
 	

@@ -1,4 +1,4 @@
-package ProjectPoo20191;
+package domain;
 
 public class Protagonista extends Personagens{
 	private Integer gold = 1000;
