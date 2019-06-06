@@ -5,16 +5,19 @@ import java.util.List;
 
 public class Inimigos extends Personagens{
 	
-	static List<Inimigos> inimigos = new ArrayList<>();
-	
 	public Inimigos(String nome, Integer vida, Integer forca) {
-		super(nome, forca, forca);
+		super(nome, vida, forca);
+		
 	}
+
+	static List<Inimigos> inimigos = new ArrayList<>();
 
 	@Override
 	public String toString() {
-		return super.toString();
+		return "\nNome:" + getNome() + "\nVida:" + getVida() + "\nForca:" + getForca();
 	}
+
+
 
 	
 }

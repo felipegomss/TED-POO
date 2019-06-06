@@ -7,10 +7,7 @@ public class Protagonista extends Personagens{
 	
 	public Protagonista(String nome, Integer vida, Integer forca, Integer gold) {
 		super(nome, vida, forca);
-		nome = "Gabriel";
-		vida = 100;
-		forca = 10;
-		gold = 2000;
+		this.gold = gold;
 		
 	}
 

@@ -2,6 +2,10 @@ package business;
 
 import javax.swing.JOptionPane;
 
+import domain.FaseDois;
+import domain.FaseTres;
+import domain.FaseUm;
+
 public class Jogo {
 	
 
@@ -29,6 +33,11 @@ public class Jogo {
 		JOptionPane.showMessageDialog(null, "Boa sorte em sua jornada!", "Clique em 'Ok' para prosseguir",
 				JOptionPane.PLAIN_MESSAGE);
 	}
-	
+	public static void main(String[] args) {
+		
+		FaseUm.faseUm();
+		FaseDois.faseDois();
+		FaseTres.faseTres();
+	}
 	
 }

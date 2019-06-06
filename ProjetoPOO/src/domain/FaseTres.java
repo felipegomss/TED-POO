@@ -12,14 +12,15 @@ public class FaseTres {
 	static Protagonista protagonista;
 
 	public static void faseTres() {
-		Inimigos inimigo1 = new Inimigos("Castanheiro", 180, 21);
-		Inimigos inimigo2 = new Inimigos("Cajueiro", 200, 25);
-		Inimigos inimigo3 = new Inimigos("Mangabeiro", 220, 27);
+
+		Inimigos.inimigos.add(new Inimigos("Zé da Castanha", 120, 7));
+		Inimigos.inimigos.add(new Inimigos("Caju", 150, 10));
+		Inimigos.inimigos.add(new Inimigos("Roberto Manga", 180, 15));
 
 		JOptionPane.showMessageDialog(null,
-				"Você agora tem a opção de ir para uma Luta clandestina ou Lutar em um torneio para melhorar suas habilidades e receber recompensas"
-						+ "obs:\n Caso escolha luta clandestina, pode escolher seu oponente mas as recompensas serão menores"
-						+ "\nCaso escolha lutar em um torneio, mais de um inimigo será indicado e as chances de perder são maiores, mas terá maiores recompensas");
+				"Você agora tem a opção de ir para uma Luta clandestina ou Lutar em um torneio para melhorar suas habilidades e receber recompensas."
+						+ "\nObs: *Caso escolha luta clandestina, pode escolher seu oponente mas as recompensas serão menores."
+						+ "\n*Caso escolha lutar em um torneio, mais de um inimigo será indicado e as chances de perder são maiores, mas terá maiores recompensas");
 
 		int option = new Integer(JOptionPane.showInputDialog(null,
 				"1. Lutar clandestinamente e enfretar um oponente a sua escolha(100Golds para entrar e Recompensa 200Golds) "
@@ -28,37 +29,40 @@ public class FaseTres {
 
 		switch (option) {
 		case 1:
-			int option2 = new Integer(JOptionPane.showInputDialog(null, "1. Nome: " + inimigo1.getNome() + "\nForça: "
-					+ inimigo1.getForca() + "\nVida:" + inimigo1.getVida() + "\n \n" + 
-					"2. Nome: " + inimigo2.getNome() + "\nForça: " + inimigo2.getForca() + "\nVida:" + inimigo2.getVida() + "\n \n" + 
-					"3. Nome: "	+ inimigo3.getNome() + "\nForça: " + inimigo3.getForca() + "\nVida:" + inimigo3.getVida() + "\n \n",
-					"Escolha seu inimigo", JOptionPane.PLAIN_MESSAGE)).intValue();
+			int option2 = new Integer(
+					JOptionPane.showInputDialog(null,
+							"Inimigo 1. " + Inimigos.inimigos.get(0) + "\n" + "\nInimigo 2. " + Inimigos.inimigos.get(1)
+									+ "\n" + "\nInimigo 3. " + Inimigos.inimigos.get(2) + "\n",
+							JOptionPane.PLAIN_MESSAGE)).intValue();
+
 			switch (option2) {
 			case 1:
-				Briga.briga(inimigo1);
+				Briga.briga(Inimigos.inimigos.get(0), protagonista);
 				break;
-			
+
 			case 2:
-				Briga.briga(inimigo2);
+				Briga.briga(Inimigos.inimigos.get(1), protagonista);
 				break;
-				
+
 			case 3:
-				Briga.briga(inimigo3);
+				Briga.briga(Inimigos.inimigos.get(2), protagonista);
 				break;
 
 			default:
 				break;
+
 			}
-			
+
 			break;
 		case 2:
-			JOptionPane.showMessageDialog(null, "");
-			Briga.briga(inimigo1);
-			JOptionPane.showMessageDialog(null, "");
-			Briga.briga(inimigo2);
-			JOptionPane.showMessageDialog(null, "");
-			Briga.briga(inimigo3);
-			
+			JOptionPane.showMessageDialog(null, "Você irá lutar contra o primeiro oponente");
+			Briga.briga(Inimigos.inimigos.get(0), protagonista);
+			JOptionPane.showMessageDialog(null, "Você irá lutar contra o segundo oponente");
+			Briga.briga(Inimigos.inimigos.get(1), protagonista);
+			JOptionPane.showMessageDialog(null, "Você irá lutar contra o terceiro oponente");
+			Briga.briga(Inimigos.inimigos.get(2), protagonista);
+			;
+
 			break;
 		default:
 			JOptionPane.showMessageDialog(null, erro, "ERRO", JOptionPane.ERROR_MESSAGE);
