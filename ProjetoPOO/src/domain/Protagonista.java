@@ -3,8 +3,7 @@ package domain;
 public class Protagonista extends Personagens{
 	
 	private Integer gold;
-	
-	
+		
 	public Protagonista(String nome, Integer vida, Integer forca, Integer gold) {
 		super(nome, vida, forca);
 		this.gold = gold;

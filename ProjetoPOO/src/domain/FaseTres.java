@@ -11,7 +11,7 @@ public class FaseTres {
 
 	static Protagonista protagonista;
 
-	public static void faseTres() {
+	public static void faseTres(Protagonista protagonista) {
 
 		Inimigos.inimigos.add(new Inimigos("Zé da Castanha", 120, 7));
 		Inimigos.inimigos.add(new Inimigos("Caju", 150, 10));
@@ -66,7 +66,7 @@ public class FaseTres {
 			break;
 		default:
 			JOptionPane.showMessageDialog(null, erro, "ERRO", JOptionPane.ERROR_MESSAGE);
-			faseTres();
+			faseTres(protagonista);
 		}
 
 	}
