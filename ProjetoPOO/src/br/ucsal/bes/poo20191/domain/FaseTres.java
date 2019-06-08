@@ -32,7 +32,7 @@ public class FaseTres {
 					JOptionPane.showInputDialog(null,
 							"Inimigo 1. " + Inimigos.inimigos.get(0) + "\n" + "\nInimigo 2. " + Inimigos.inimigos.get(1)
 									+ "\n" + "\nInimigo 3. " + Inimigos.inimigos.get(2) + "\n",
-							JOptionPane.PLAIN_MESSAGE)).intValue();
+							JOptionPane.PLAIN_MESSAGE)).intValue();	
 
 			switch (option2) {
 			case 1:
@@ -49,6 +49,7 @@ public class FaseTres {
 
 			default:
 				JOptionPane.showMessageDialog(null, erro, "ERRO", JOptionPane.ERROR_MESSAGE);
+				FaseTres.faseTres(protagonista);
 				break;
 
 			}

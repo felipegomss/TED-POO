@@ -3,7 +3,7 @@ package br.ucsal.bes.poo20191.domain;
 import javax.swing.JOptionPane;
 
 public class FaseQuatro {
-	
+
 	static String erro = "Opção indisponível";
 
 	public static void faseQuatro(Protagonista protagonista) {
@@ -15,8 +15,8 @@ public class FaseQuatro {
 				"Clique em 'Ok' para prosseguir", JOptionPane.PLAIN_MESSAGE);
 
 		JOptionPane.showMessageDialog(null,
-				"Como tudo que você fez até agora foi para conseguir sua vingança, sua reação imediata foi de ir ao encontro desse amigo"
-						+ "para extrair todas as informações que você conseguisse dele, por bem ou por mal, você ia ficar sabendo onde ele estava!"
+				"Como tudo que você fez até agora foi para conseguir sua vingança, \nsua reação imediata foi de ir ao encontro desse amigo "
+						+ "para extrair todas as informações que você conseguisse dele, \npor bem ou por mal, você ia ficar sabendo onde ele estava!"
 						+ "\n\n Rapidamente o alvo foi emboscado, e tudo foi preparado pra que você tivesse sua ''conversinha'' com ele.",
 				"Clique em 'Ok' para prosseguir", JOptionPane.PLAIN_MESSAGE);
 
@@ -34,14 +34,47 @@ public class FaseQuatro {
 
 		switch (option) {
 		case 1:
-				
+			JOptionPane.showMessageDialog(null,
+					"Depois de dias o torturando sem que ele o veja, ele finalmente deu a localização do assasino do seu pai."
+							+ "\nAgora você irá atrás do assasino do seu pai, mas antes você teria que se livrar do homem torturado",
+					"Clique em 'Ok' para prosseguir", JOptionPane.PLAIN_MESSAGE);
+
+			int option2 = new Integer(JOptionPane.showInputDialog(null,
+					"1. Se livrar dele o matando"
+							+ "\n2. Largar ele em algum local e sair de lá, afinal ele não viu seu rosto",
+					JOptionPane.PLAIN_MESSAGE)).intValue();
+
+			switch (option2) {
+			case 1:
+				JOptionPane.showMessageDialog(null,
+						"Você o matou estrangulado, agora você é um assasino igual o homem que matou o seu pai",
+						"Clique em 'Ok' para prosseguir", JOptionPane.PLAIN_MESSAGE);
+
+				break;
+			case 2:
+				JOptionPane.showMessageDialog(null,
+						"Você fez a escolha correta, mais tarde você descobriu que esse homem tinha um filho esperando por ele, assim como você já foi filho um dia",
+						"Clique em 'Ok' para prosseguir", JOptionPane.PLAIN_MESSAGE);
+
+				break;
+
+			default:
+				JOptionPane.showMessageDialog(null, erro, "ERRO", JOptionPane.ERROR_MESSAGE);
+				FaseQuatro.faseQuatro(protagonista);
+				break;
+			}
 			break;
 		case 2:
-			
+			protagonista.setGold(protagonista.getGold() - 500);
+			JOptionPane.showMessageDialog(null, "Você agora tem " + protagonista.getGold()
+					+ ", mas o seu novo 'amigo' te deu a informação a qual você desejava\nSua missão em caça do assasino começou",
+					"Clique em 'Ok' para prosseguir", JOptionPane.PLAIN_MESSAGE);
+
 			break;
-			
+
 		default:
 			JOptionPane.showMessageDialog(null, erro, "ERRO", JOptionPane.ERROR_MESSAGE);
+			FaseQuatro.faseQuatro(protagonista);
 			break;
 		}
 

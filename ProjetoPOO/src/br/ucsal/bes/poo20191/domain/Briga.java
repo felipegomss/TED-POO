@@ -18,13 +18,13 @@ public class Briga {
 				JOptionPane.PLAIN_MESSAGE);
 
 		do {
-			if (probabilidade < 4) {
+			if (probabilidade < 5) {
 				JOptionPane.showMessageDialog(null, "Você foi mais rápido, isso ai!", "Clique em 'Ok' para prosseguir",
 						JOptionPane.PLAIN_MESSAGE);
 				probabilidade = rd.nextInt((9) + 1);
 
-				if (probabilidade < 5) {
-					inimigo.setVida(inimigo.getVida() - (protagonista.getForca() * 2));
+				if (probabilidade < 6) {
+					inimigo.setVida(inimigo.getVida() - (protagonista.getForca() * 3));
 					JOptionPane.showMessageDialog(null,
 							"Você acertou com um soco em " + inimigo.getNome() + "."
 									+ "\nA vida dele desceu para " + inimigo.getVida(),
@@ -102,14 +102,14 @@ public class Briga {
 		} else if (protagonista.getVida() <= 20) {
 			JOptionPane.showMessageDialog(null,
 					"Você tá apanhando igual Neymar, e agora você está com " + protagonista.getVida()
-							+ "de vida. \nSe você não reagir, você vai tomar um atropelo!",
+							+ " de vida. \nSe você não reagir, você vai tomar um atropelo!",
 					"Clique em 'Ok' para prosseguir", JOptionPane.PLAIN_MESSAGE);
 			return true;
 
 		} else if (protagonista.getVida() <= 50) {
 			JOptionPane.showMessageDialog(null,
 					"Você está com " + protagonista.getVida()
-							+ "e seu oponente te chamou de gado. \\nTá na hora de pistolar e ir pra cima, vai deixar?",
+							+ " e seu oponente te chamou de gado. \nTá na hora de pistolar e ir pra cima, vai deixar?",
 					"Clique em 'Ok' para prosseguir", JOptionPane.PLAIN_MESSAGE);
 			return true;
 		} else {
