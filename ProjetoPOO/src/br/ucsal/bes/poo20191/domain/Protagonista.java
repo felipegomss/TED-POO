@@ -1,4 +1,4 @@
-package domain;
+package br.ucsal.bes.poo20191.domain;
 
 public class Protagonista extends Personagens{
 	

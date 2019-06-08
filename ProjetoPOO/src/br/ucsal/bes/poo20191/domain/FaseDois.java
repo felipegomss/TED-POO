@@ -1,4 +1,4 @@
-package domain;
+package br.ucsal.bes.poo20191.domain;
 
 import java.util.Random;
 
@@ -11,10 +11,9 @@ public class FaseDois {
 
 	static String erro = "Opção indisponível";
 
-
 	public static void faseDois(Protagonista protagonista) {
-		
-		Inimigos inimigo = new Inimigos("Beicin", 60, 5);		
+
+		Inimigos inimigo = new Inimigos("Beicin", 60, 5);
 		Inimigos inimigo2 = new Inimigos("Cocacoca", 100, 12);
 
 		JOptionPane.showMessageDialog(null,
@@ -32,8 +31,8 @@ public class FaseDois {
 			protagonista.setForca(protagonista.getForca() + 2);
 			protagonista.setGold(protagonista.getGold() + 50);
 			JOptionPane.showMessageDialog(null, "Enquanto caminhava, você encontrou o Beicin dando tapas no "
-					+ "\nrosto de uma moça inofensiva, e você decidiu intervir e testar sua força com ele."
-					+ "\nDepois da briga, você se machucou um pouco mas sua autoestima aumentou junto com sua experiência"
+					+ "\nrosto de uma moça e decidiu intervir e aproveitou para testar sua força com ele."
+					+ "\n\nDepois da briga, você se machucou um pouco mas sua autoestima aumentou junto com sua experiência"
 					+ "\n\nJunto com sua auto-estima, sua força subiu para:" + protagonista.getForca()
 					+ "\nMas com a briga, sua saúde ficou  em: " + protagonista.getVida()
 					+ "\nE como você encontrou umas moedas com Beicin, você agora tem " + protagonista.getGold()

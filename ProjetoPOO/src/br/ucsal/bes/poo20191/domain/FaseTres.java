@@ -1,4 +1,4 @@
-package domain;
+package br.ucsal.bes.poo20191.domain;
 
 import java.util.Random;
 
@@ -20,7 +20,8 @@ public class FaseTres {
 		JOptionPane.showMessageDialog(null,
 				"Você agora tem a opção de ir para uma Luta clandestina ou Lutar em um torneio para melhorar suas habilidades e receber recompensas."
 						+ "\nObs: *Caso escolha luta clandestina, pode escolher seu oponente mas as recompensas serão menores."
-						+ "\n*Caso escolha lutar em um torneio, mais de um inimigo será indicado e as chances de perder são maiores, mas terá maiores recompensas");
+						+ "\n*Caso escolha lutar em um torneio, mais de um inimigo será indicado e as chances de perder são maiores, mas terá maiores recompensas",
+						"Clique em 'Ok' para prosseguir", JOptionPane.PLAIN_MESSAGE);
 
 		int option = new Integer(JOptionPane.showInputDialog(null,
 				"1. Lutar clandestinamente e enfretar um oponente a sua escolha(100Golds para entrar e Recompensa 200Golds) "
