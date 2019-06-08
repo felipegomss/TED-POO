@@ -63,11 +63,12 @@ public class Inicio {
 			case 1:
 				protagonista.setGold(protagonista.getGold() - 250);
 				protagonista.setForca(protagonista.getForca() + 5);
-				protagonista.setVida(protagonista.getVida() + 10);
+				protagonista.setVida(protagonista.getVida() + 20);
 				JOptionPane.showMessageDialog(null,
 						"Parabéns, o treino na academia se mostrou muito efetivo." + "\nAgora sua força subiu para: "
 								+ protagonista.getForca() + "\nE sua saúde aumentou para: " + protagonista.getVida()
-								+ "\nMas agora só te restam " + protagonista.getGold() + "moedas");
+								+ "\nMas agora só te restam " + protagonista.getGold() + "moedas",
+						"Clique em 'Ok' para prosseguir", JOptionPane.PLAIN_MESSAGE);
 				FaseDois.faseDois(protagonista);
 				break;
 			case 2:
@@ -77,7 +78,8 @@ public class Inicio {
 						"Sua habilidade não melhorou muito, mas "
 								+ "\nagora você já pode participar de uma briga de rua." + "\n\nSua força subiu para: "
 								+ protagonista.getForca() + "\nComo treinou sem equipamentos, sua saúde agora é: "
-								+ protagonista.getVida() + "\nMas você ainda tem " + protagonista.getGold() + "moedas");
+								+ protagonista.getVida() + "\nMas você ainda tem " + protagonista.getGold() + "moedas",
+						"Clique em 'Ok' para prosseguir", JOptionPane.PLAIN_MESSAGE);
 				FaseDois.faseDois(protagonista);
 				break;
 			default:

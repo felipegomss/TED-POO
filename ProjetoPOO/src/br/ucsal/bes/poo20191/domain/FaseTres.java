@@ -9,13 +9,11 @@ public class FaseTres {
 
 	static String erro = "Opção indisponível";
 
-	static Protagonista protagonista;
-
 	public static void faseTres(Protagonista protagonista) {
 
-		Inimigos.inimigos.add(new Inimigos("Zé da Castanha", 120, 7));
-		Inimigos.inimigos.add(new Inimigos("Caju", 150, 10));
-		Inimigos.inimigos.add(new Inimigos("Roberto Manga", 180, 15));
+		Inimigos.inimigos.add(new Inimigos("Zé da Castanha", 110, 7));
+		Inimigos.inimigos.add(new Inimigos("Caju", 130, 10));
+		Inimigos.inimigos.add(new Inimigos("Roberto Manga", 150, 15));
 
 		JOptionPane.showMessageDialog(null,
 				"Você agora tem a opção de ir para uma Luta clandestina ou Lutar em um torneio para melhorar suas habilidades e receber recompensas."
@@ -24,8 +22,8 @@ public class FaseTres {
 						"Clique em 'Ok' para prosseguir", JOptionPane.PLAIN_MESSAGE);
 
 		int option = new Integer(JOptionPane.showInputDialog(null,
-				"1. Lutar clandestinamente e enfretar um oponente a sua escolha(100Golds para entrar e Recompensa 200Golds) "
-						+ "\n2. Lutar em um torneio e enfretar varios oponentes(500Golds para entrar. Recompensa 1000Golds)",
+				"1. Lutar clandestinamente e enfretar um oponente a sua escolha (100 moedas para entrar e Recompensa 200 moedas) "
+						+ "\n2. Lutar em um torneio profissional e enfretar vários oponentes (500 moedas para entrar. Recompensa 1000 moedas)",
 				"Faça sua escolha!", JOptionPane.PLAIN_MESSAGE)).intValue();
 
 		switch (option) {
@@ -50,6 +48,7 @@ public class FaseTres {
 				break;
 
 			default:
+				JOptionPane.showMessageDialog(null, erro, "ERRO", JOptionPane.ERROR_MESSAGE);
 				break;
 
 			}
@@ -69,7 +68,8 @@ public class FaseTres {
 			JOptionPane.showMessageDialog(null, erro, "ERRO", JOptionPane.ERROR_MESSAGE);
 			faseTres(protagonista);
 		}
-
+		
+		FaseQuatro.faseQuatro(protagonista);
 	}
 
 }

@@ -20,7 +20,8 @@ public class FaseDois {
 				"Agora que você ficou mais forte, você quer testar sua força "
 						+ "\nou deseja continuar treinando para aprimorar sua força?"
 						+ "\n\nObs: Caso continue treinando, você só poderá treinar na academia, "
-						+ "\ngastará mais 400 moedas, porém aumentará mais sua força e resistência");
+						+ "\ngastará mais 400 moedas, porém aumentará mais sua força e resistência",
+				"Clique em 'Ok' para prosseguir", JOptionPane.PLAIN_MESSAGE);
 
 		int option = new Integer(JOptionPane.showInputDialog(null, "1. Testar a força. \n2. Treinar na academia.",
 				"Faça sua escolha!", JOptionPane.PLAIN_MESSAGE)).intValue();
@@ -28,7 +29,7 @@ public class FaseDois {
 		switch (option) {
 		case 1:
 			Briga.briga(inimigo, protagonista);
-			protagonista.setForca(protagonista.getForca() + 2);
+			protagonista.setForca(protagonista.getForca() + 3);
 			protagonista.setGold(protagonista.getGold() + 50);
 			JOptionPane.showMessageDialog(null, "Enquanto caminhava, você encontrou o Beicin dando tapas no "
 					+ "\nrosto de uma moça e decidiu intervir e aproveitou para testar sua força com ele."
@@ -42,7 +43,7 @@ public class FaseDois {
 		case 2:
 			protagonista.setGold(protagonista.getGold() - 400);
 			protagonista.setForca(protagonista.getForca() + 5);
-			protagonista.setVida(protagonista.getVida() + 20);
+			protagonista.setVida(protagonista.getVida() + 30);
 			JOptionPane.showMessageDialog(null,
 					"O treinamento foi mais intensivo e você agora é quase um lutador profissional."
 							+ "\nSua força aumentou incrívelmente para:" + protagonista.getForca()
